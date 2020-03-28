@@ -27,7 +27,11 @@
   - [開發前的準備](#開發前的準備)
   - [什麼樣的測試適合API自動化測試](#什麼樣的測試適合API自動化測試)
   - [避免Flaky tests的5大實用方法](#避免Flaky-tests的5大實用方法)
-- [API測試的程式範例](#API測試的程式碼範例)
+- [API測試的程式碼範例](#API測試的程式碼範例)
+  - [Status code](#status-code)
+  - [String handling](#string-handling)
+  - [Array handling](#array-handling)
+  - [Random handling](#random-handling)
 - [常見問答](#常見問答)
 
 ## 開始開發API自動化測試之前
@@ -109,7 +113,7 @@ API測試位於整合測試的範疇，數量設計上應介於單元測試與UI
 4. 選擇最成熟的API開始寫測試程式，也就是該API不會因為短期商業計劃而不斷改變。
 5. 不要過度設計你的測試程式，讓每個API測試程式既簡單又很容易維護。
 
-## API測試的程式範例
+## API測試的程式碼範例
 
 **以下使用javascript及Postman作為範例**
 

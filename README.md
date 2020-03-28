@@ -19,7 +19,7 @@ Here are some of the documents of the test frameworks. If something isn't mentio
 
 ## Table of Contents
 - [Before developing API automation tests](#before-developing-api-automation-tests)
-  - [API automation tests is indispensible](#api-automation-tests-is-easy-to-develop-but-expensive-to-maintain)
+  - [API automation tests is indispensible](#api-automation-tests-is-indispensible)
   - [What are flaky tests](#what-are-flaky-tests)
   - [Why API automation tests make flaky tests](#why-api-automation-tests-make-flaky-tests)
 - [Best practice to make API automation tests reliable and stable](#best-practice-to-make-api-automation-tests-reliable-and-stable)
@@ -28,6 +28,10 @@ Here are some of the documents of the test frameworks. If something isn't mentio
   - [Choose tests cases for API automation tests](#choose-tests-cases-for-api-automation-tests)
   - [Top 5 practical ways to avoid flaky tests](#top-5-practical-ways-to-avoid-flaky-tests)
 - [API tests code convention](#api-tests-code-convention)
+  - [Status code](#status-code)
+  - [String handling](#string-handling)
+  - [Array handling](#array-handling)
+  - [Random handling](#random-handling)
 - [Common questions](#common-questions)
 
 ## Before developing API automation tests
