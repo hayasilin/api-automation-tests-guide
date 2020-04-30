@@ -90,17 +90,17 @@ Google建議70/20/10的比例：70%單元測試，20%整合測試，以及10%的
 API測試位於整合測試的範疇，數量設計上應介於單元測試與UI測試之間。
 
 ### 開發前的準備
-- **重要!** 負責開發API的伺服器端工程師應該提供寫好的API文件，該文件裡應該包含API的規格，Endpoints，Paylod內容，各回傳參數是否可為null，各回傳參數是否為空值等重要資訊，由此作為依據才能開發API自動化測試程式碼。
+- **重要!** 負責開發API的伺服器端工程師應該提供寫好的API文件，該文件裡應該包含API的規格，Endpoints，Payload等內容，各回傳參數是否可為null，各回傳參數是否可為空值等重要資訊，由此作為依據才能開發API自動化測試程式碼。
 
 ### 什麼樣的測試適合API自動化測試
 
 **推薦**
-- 驗證API回傳的status code
-- 驗證根據API文件定義為Requried，也就是API回傳參數中一定不為Null的值。
-- 驗證API文件上某欄位Array定義是Required，且定義不會為空值。
-- 假設API文件某個欄位定義一定會給某個特定的數量。
+- 驗證API回傳的status code。
+- 驗證API文件定義為絕對不為Null的值。
+- 驗證API文件定義為絕對不為Null的值，且定義不會為空值。
 
 **不推薦**
+- 驗證API回傳物件會等於某個特定的數量。
 - 結構改變（ex: 確認Array是否變成Object）。
 - 型別改變（ex: 確認String是否變成Number）。
 
@@ -170,6 +170,11 @@ pm.test("non-nullable data is not null", function () {
     pm.expect(jsonData.sections[randomNumber].items[randomNumber].imageUrl).not.to.eql(null);
     pm.expect(jsonData.sections[randomNumber].items[randomNumber].titleLabbel).not.to.eql(null);
 });
+```
+
+### Set environment variables depends on the response of previous API
+```javascript
+pm.environment.set("token", data.token);
 ```
 
 ## 常見問答

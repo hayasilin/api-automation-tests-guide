@@ -91,7 +91,7 @@ Just like a regular pyramid tends to be the most stable structure in real life, 
 API testing is in the category of integration tests, the proportion should in between unit testing and UI testing.
 
 ### The mind set of developing API automation tests
-- **Important!** Server side engineer who develops API should provide API document, in which should includes API spec, endpoints, payload, return value can be null or not, return value will be empty or not. By having these information in API document, we can follow the document to develop API automation tests.
+- **Important!** Server side engineer who develops API should provide API document, in which should includes API spec, endpoints, payload, return value can be null or not, return value could be empty or not. By having these information in API document, we can follow the document to develop API automation tests.
 
 ## Choose tests cases for API automation tests
 
@@ -99,9 +99,9 @@ API testing is in the category of integration tests, the proportion should in be
 - Verify API response status code.
 - Verify a return value that will not be null according to API document.
 - Verify a return value that will not be empty according to API document.
-- Verfiy a return collection value has certain items if it's specified in API document.
 
 **Cons**
+- Verfiy a return collection value has certain items.
 - Structure changing, such as check whether array change to object.
 - Type changing, such as check whether string change to number.
 
@@ -171,6 +171,11 @@ pm.test("non-nullable data is not null", function () {
     pm.expect(jsonData.sections[randomNumber].items[randomNumber].imageUrl).not.to.eql(null);
     pm.expect(jsonData.sections[randomNumber].items[randomNumber].titleLabbel).not.to.eql(null);
 });
+```
+
+### Set environment variables depends on the response of previous API
+```javascript
+pm.environment.set("token", data.token);
 ```
 
 ## Common questions
